@@ -1,0 +1,149 @@
+{
+	"id": "8bd36359-8104-4c59-842e-28e8f8b1b3fb",
+	"values": [
+		{
+			"key": "loyalty_token",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "access_token",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "owner_id",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "app_id",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "activateCoupon",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "prolongCoupon",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "bindCodes",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "csvMaxCodes",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "csvMinCodes",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "csv15Codes",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "csv1Code",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "title_3days_maxcode_longTitle",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "linkToShop",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "linkToShopWithCode",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "organizationShort",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "organizationLong",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "coupon_id",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "getPromocode",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "addressLink",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "addressShortText",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "addressLongText",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "addressLinks",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "fullTermsShort",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "fullTermsLong",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "linkToMiniapp",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "prolongDate",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "csv2codes",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "sber",
+			"value": "",
+			"enabled": true
+		}
+	],
+	"name": "My Workspace Globals",
+	"_postman_variable_scope": "globals",
+	"_postman_exported_at": "2021-05-11T10:30:58.326Z",
+	"_postman_exported_using": "Postman/7.36.5"
+}

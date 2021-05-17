@@ -1,0 +1,3522 @@
+{
+	"info": {
+		"_postman_id": "c3e0427a-8ced-4d2b-8e92-3005e23e0b3d",
+		"name": "Loyalty BP",
+		"description": "status_code: 1 hidden 2 active\nview_type: 0 Button 1 Stub \"Soon\"\nrepeatable: 1 true 0 false",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Task",
+			"item": [
+				{
+					"name": "Executable",
+					"item": [
+						{
+							"name": "nondelay.repeat.nodate.no_content",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Карточка почти без контента",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "instruction_text",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "price",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "repeatable",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "expire_at",
+											"value": "{{prolongDays}}",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "complete_url",
+											"value": "{{loyaltyTestLanding}}",
+											"type": "text"
+										},
+										{
+											"key": "partner_id",
+											"value": "{{loyaltyLandingPartnerId}}",
+											"type": "text"
+										},
+										{
+											"key": "category_id",
+											"value": "{{taskCategoryId}}",
+											"type": "text"
+										},
+										{
+											"key": "view_type",
+											"value": "0",
+											"type": "text"
+										},
+										{
+											"key": "status_code",
+											"value": "2",
+											"type": "text"
+										},
+										{
+											"key": "logo_photo_id",
+											"value": "{{icon.sports}}",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "cover_photo_id",
+											"value": "{{cover.sports}}",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "instruction_header",
+											"value": "Как выполнить",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://api.vk.com/method/loyaltyTeen.adminCreateTask?access_token={{loyalty_token}}",
+									"protocol": "https",
+									"host": [
+										"api",
+										"vk",
+										"com"
+									],
+									"path": [
+										"method",
+										"loyaltyTeen.adminCreateTask"
+									],
+									"query": [
+										{
+											"key": "access_token",
+											"value": "{{loyalty_token}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "nondelay.repeat.nextYear.max_content",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"let daysCount = eval(globals.prolongDate)(365);",
+											"pm.environment.set('prolongDays', daysCount)"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "{{title.long}}",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "{{desc.long}}",
+											"type": "text"
+										},
+										{
+											"key": "instruction_text",
+											"value": "{{instr.long}}",
+											"type": "text"
+										},
+										{
+											"key": "price",
+											"value": "999999999",
+											"type": "text"
+										},
+										{
+											"key": "repeatable",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "expire_at",
+											"value": "{{prolongDays}}",
+											"type": "text"
+										},
+										{
+											"key": "complete_url",
+											"value": "{{loyaltyTestLanding}}",
+											"type": "text"
+										},
+										{
+											"key": "partner_id",
+											"value": "{{loyaltyLandingPartnerId}}",
+											"type": "text"
+										},
+										{
+											"key": "category_id",
+											"value": "{{taskCategoryId.longText}}",
+											"type": "text"
+										},
+										{
+											"key": "view_type",
+											"value": "0",
+											"type": "text"
+										},
+										{
+											"key": "status_code",
+											"value": "2",
+											"type": "text"
+										},
+										{
+											"key": "logo_photo_id",
+											"value": "{{icon.sports}}",
+											"type": "text"
+										},
+										{
+											"key": "cover_photo_id",
+											"value": "{{cover.sports}}",
+											"type": "text"
+										},
+										{
+											"key": "instruction_header",
+											"value": "Как выполнить",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://api.vk.com/method/loyaltyTeen.adminCreateTask?access_token={{loyalty_token}}",
+									"protocol": "https",
+									"host": [
+										"api",
+										"vk",
+										"com"
+									],
+									"path": [
+										"method",
+										"loyaltyTeen.adminCreateTask"
+									],
+									"query": [
+										{
+											"key": "access_token",
+											"value": "{{loyalty_token}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "nondelay.repeat.noDate.min_content",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "{{title.short}}",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "{{desc.short}}",
+											"type": "text"
+										},
+										{
+											"key": "instruction_text",
+											"value": "{{instr.short}}",
+											"type": "text"
+										},
+										{
+											"key": "price",
+											"value": "199",
+											"type": "text"
+										},
+										{
+											"key": "repeatable",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "expire_at",
+											"value": "{{prolongDays}}",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "complete_url",
+											"value": "{{loyaltyTestLanding}}",
+											"type": "text"
+										},
+										{
+											"key": "partner_id",
+											"value": "{{loyaltyLandingPartnerId}}",
+											"type": "text"
+										},
+										{
+											"key": "category_id",
+											"value": "{{taskCategoryId}}",
+											"type": "text"
+										},
+										{
+											"key": "view_type",
+											"value": "0",
+											"type": "text"
+										},
+										{
+											"key": "status_code",
+											"value": "2",
+											"type": "text"
+										},
+										{
+											"key": "logo_photo_id",
+											"value": "{{icon.book}}",
+											"type": "text"
+										},
+										{
+											"key": "cover_photo_id",
+											"value": "{{cover.book}}",
+											"type": "text"
+										},
+										{
+											"key": "instruction_header",
+											"value": "Как выполнить",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://api.vk.com/method/loyaltyTeen.adminCreateTask?access_token={{loyalty_token}}",
+									"protocol": "https",
+									"host": [
+										"api",
+										"vk",
+										"com"
+									],
+									"path": [
+										"method",
+										"loyaltyTeen.adminCreateTask"
+									],
+									"query": [
+										{
+											"key": "access_token",
+											"value": "{{loyalty_token}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "nondelay.repeat.noDate",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Повторяемое, доступно для выполнения",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "{{desc.short}}",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "instruction_text",
+											"value": "Нет блока описания",
+											"type": "text"
+										},
+										{
+											"key": "price",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "repeatable",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "expire_at",
+											"value": "{{prolongDays}}",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "complete_url",
+											"value": "{{loyaltyTestLanding}}",
+											"type": "text"
+										},
+										{
+											"key": "partner_id",
+											"value": "{{loyaltyLandingPartnerId}}",
+											"type": "text"
+										},
+										{
+											"key": "category_id",
+											"value": "{{taskCategoryId}}",
+											"type": "text"
+										},
+										{
+											"key": "view_type",
+											"value": "0",
+											"type": "text"
+										},
+										{
+											"key": "status_code",
+											"value": "2",
+											"type": "text"
+										},
+										{
+											"key": "logo_photo_id",
+											"value": "{{icon.school}}",
+											"type": "text"
+										},
+										{
+											"key": "cover_photo_id",
+											"value": "{{cover.school}}",
+											"type": "text"
+										},
+										{
+											"key": "instruction_header",
+											"value": "Как выполнить",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://api.vk.com/method/loyaltyTeen.adminCreateTask?access_token={{loyalty_token}}",
+									"protocol": "https",
+									"host": [
+										"api",
+										"vk",
+										"com"
+									],
+									"path": [
+										"method",
+										"loyaltyTeen.adminCreateTask"
+									],
+									"query": [
+										{
+											"key": "access_token",
+											"value": "{{loyalty_token}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "nondelay.repeat.futureDate",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"let daysCount = eval(globals.prolongDate)('random');",
+											"pm.environment.set('prolongDays', daysCount)"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Повторяемое, доступно для выполнения",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "{{desc.long}}",
+											"type": "text"
+										},
+										{
+											"key": "instruction_text",
+											"value": "{{instr.short}}",
+											"type": "text"
+										},
+										{
+											"key": "price",
+											"value": "5",
+											"type": "text"
+										},
+										{
+											"key": "repeatable",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "expire_at",
+											"value": "{{prolongDays}}",
+											"type": "text"
+										},
+										{
+											"key": "complete_url",
+											"value": "{{loyaltyTestLanding}}",
+											"type": "text"
+										},
+										{
+											"key": "partner_id",
+											"value": "{{loyaltyLandingPartnerId}}",
+											"type": "text"
+										},
+										{
+											"key": "category_id",
+											"value": "{{taskCategoryId}}",
+											"type": "text"
+										},
+										{
+											"key": "view_type",
+											"value": "0",
+											"type": "text"
+										},
+										{
+											"key": "status_code",
+											"value": "2",
+											"type": "text"
+										},
+										{
+											"key": "logo_photo_id",
+											"value": "{{icon.zoom}}",
+											"type": "text"
+										},
+										{
+											"key": "cover_photo_id",
+											"value": "{{cover.zoom}}",
+											"type": "text"
+										},
+										{
+											"key": "instruction_header",
+											"value": "Как выполнить",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://api.vk.com/method/loyaltyTeen.adminCreateTask?access_token={{loyalty_token}}",
+									"protocol": "https",
+									"host": [
+										"api",
+										"vk",
+										"com"
+									],
+									"path": [
+										"method",
+										"loyaltyTeen.adminCreateTask"
+									],
+									"query": [
+										{
+											"key": "access_token",
+											"value": "{{loyalty_token}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "nondelay.nonrepeat.nextYear",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"let daysCount = eval(globals.prolongDate)(365);",
+											"pm.environment.set('prolongDays', daysCount)"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Одноразовое, доступно для выполнения",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "Задание доступно для выполнения один раз, после выполнения - заглушка вместо кнопки",
+											"type": "text"
+										},
+										{
+											"key": "instruction_text",
+											"value": "- доступна кнопка Начать\n- заглушка вместо кнопки после выполнения\n- бейдж на виждете \"выполнено\"\n\n[**Ссылка в тексте**](https://vk.com)\n\n[**Еще ссылка**](https://google.com)",
+											"type": "text"
+										},
+										{
+											"key": "price",
+											"value": "1100",
+											"type": "text"
+										},
+										{
+											"key": "repeatable",
+											"value": "0",
+											"type": "text"
+										},
+										{
+											"key": "expire_at",
+											"value": "{{prolongDays}}",
+											"type": "text"
+										},
+										{
+											"key": "complete_url",
+											"value": "{{loyaltyTestLanding}}",
+											"type": "text"
+										},
+										{
+											"key": "partner_id",
+											"value": "{{loyaltyLandingPartnerId}}",
+											"type": "text"
+										},
+										{
+											"key": "category_id",
+											"value": "{{taskCategoryId}}",
+											"type": "text"
+										},
+										{
+											"key": "view_type",
+											"value": "0",
+											"type": "text"
+										},
+										{
+											"key": "status_code",
+											"value": "2",
+											"type": "text"
+										},
+										{
+											"key": "logo_photo_id",
+											"value": "{{icon.cash}}",
+											"type": "text"
+										},
+										{
+											"key": "cover_photo_id",
+											"value": "{{cover.cash}}",
+											"type": "text"
+										},
+										{
+											"key": "instruction_header",
+											"value": "Как выполнить",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://api.vk.com/method/loyaltyTeen.adminCreateTask?access_token={{loyalty_token}}",
+									"protocol": "https",
+									"host": [
+										"api",
+										"vk",
+										"com"
+									],
+									"path": [
+										"method",
+										"loyaltyTeen.adminCreateTask"
+									],
+									"query": [
+										{
+											"key": "access_token",
+											"value": "{{loyalty_token}}"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Delayed",
+					"item": [
+						{
+							"name": "nondelay.noCompleteUrl.repeat.noDate",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Не отложено, без ссылки на выполнение",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "instruction_text",
+											"value": "- заглушка Скоро вместо кнопки начать\n- нет блока с описанием",
+											"type": "text"
+										},
+										{
+											"key": "price",
+											"value": "999999999",
+											"type": "text"
+										},
+										{
+											"key": "repeatable",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "expire_at",
+											"value": "{{prolongDays}}",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "complete_url",
+											"value": "{{loyaltyTestLanding}}",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "partner_id",
+											"value": "{{loyaltyLongPartner(id)}}",
+											"type": "text"
+										},
+										{
+											"key": "category_id",
+											"value": "{{taskCategoryId}}",
+											"type": "text"
+										},
+										{
+											"key": "view_type",
+											"value": "0",
+											"type": "text"
+										},
+										{
+											"key": "status_code",
+											"value": "2",
+											"type": "text"
+										},
+										{
+											"key": "logo_photo_id",
+											"value": "{{icon.cash}}",
+											"type": "text"
+										},
+										{
+											"key": "cover_photo_id",
+											"value": "{{cover.cash}}",
+											"type": "text"
+										},
+										{
+											"key": "instruction_header",
+											"value": "Как выполнить",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://api.vk.com/method/loyaltyTeen.adminCreateTask?access_token={{loyalty_token}}",
+									"protocol": "https",
+									"host": [
+										"api",
+										"vk",
+										"com"
+									],
+									"path": [
+										"method",
+										"loyaltyTeen.adminCreateTask"
+									],
+									"query": [
+										{
+											"key": "access_token",
+											"value": "{{loyalty_token}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "nondelay.noCompleteUrl.nonrepeat.nodate",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Не отложено, без ссылки на выполнение",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "Заглушка Скоро вместо кнопки начать, нет блока Как получить",
+											"type": "text"
+										},
+										{
+											"key": "instruction_text",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "price",
+											"value": "11",
+											"type": "text"
+										},
+										{
+											"key": "repeatable",
+											"value": "0",
+											"type": "text"
+										},
+										{
+											"key": "expire_at",
+											"value": "{{prolongDays}}",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "complete_url",
+											"value": "{{loyaltyTestLanding}}",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "partner_id",
+											"value": "{{loyaltyLandingPartnerId}}",
+											"type": "text"
+										},
+										{
+											"key": "category_id",
+											"value": "{{taskCategoryId}}",
+											"type": "text"
+										},
+										{
+											"key": "view_type",
+											"value": "0",
+											"type": "text"
+										},
+										{
+											"key": "status_code",
+											"value": "2",
+											"type": "text"
+										},
+										{
+											"key": "logo_photo_id",
+											"value": "{{icon.cash}}",
+											"type": "text"
+										},
+										{
+											"key": "cover_photo_id",
+											"value": "{{cover.cash}}",
+											"type": "text"
+										},
+										{
+											"key": "instruction_header",
+											"value": "Как выполнить",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://api.vk.com/method/loyaltyTeen.adminCreateTask?access_token={{loyalty_token}}",
+									"protocol": "https",
+									"host": [
+										"api",
+										"vk",
+										"com"
+									],
+									"path": [
+										"method",
+										"loyaltyTeen.adminCreateTask"
+									],
+									"query": [
+										{
+											"key": "access_token",
+											"value": "{{loyalty_token}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delay.completeUrl.repeat.futureDate",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"let daysCount = eval(globals.prolongDate)('random');",
+											"pm.environment.set('prolongDays', daysCount)"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Отложено, есть ссылка на выполнение",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "Заглушка Скоро вместо кнопки начать, нет блока Как получить",
+											"type": "text"
+										},
+										{
+											"key": "instruction_text",
+											"value": "{{instr.long}}",
+											"type": "text"
+										},
+										{
+											"key": "price",
+											"value": "1112",
+											"type": "text"
+										},
+										{
+											"key": "repeatable",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "expire_at",
+											"value": "{{prolongDays}}",
+											"type": "text"
+										},
+										{
+											"key": "complete_url",
+											"value": "{{loyaltyTestLanding}}",
+											"type": "text"
+										},
+										{
+											"key": "partner_id",
+											"value": "{{loyaltyLandingPartnerId}}",
+											"type": "text"
+										},
+										{
+											"key": "category_id",
+											"value": "{{taskCategoryId}}",
+											"type": "text"
+										},
+										{
+											"key": "view_type",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "status_code",
+											"value": "2",
+											"type": "text"
+										},
+										{
+											"key": "logo_photo_id",
+											"value": "{{icon.book}}",
+											"type": "text"
+										},
+										{
+											"key": "cover_photo_id",
+											"value": "{{cover.book}}",
+											"type": "text"
+										},
+										{
+											"key": "instruction_header",
+											"value": "Как выполнить",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://api.vk.com/method/loyaltyTeen.adminCreateTask?access_token={{loyalty_token}}",
+									"protocol": "https",
+									"host": [
+										"api",
+										"vk",
+										"com"
+									],
+									"path": [
+										"method",
+										"loyaltyTeen.adminCreateTask"
+									],
+									"query": [
+										{
+											"key": "access_token",
+											"value": "{{loyalty_token}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delay.completeUrl.nonrepeat.futureDate",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"let daysCount = eval(globals.prolongDate)('random');",
+											"pm.environment.set('prolongDays', daysCount)"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Отложено, есть ссылка на выполнение",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "{{desc.short}}",
+											"type": "text"
+										},
+										{
+											"key": "instruction_text",
+											"value": "- заглушка вместо Скоро кнопка начать\n- ссылка на выполнение не пробивает настройку Отложено",
+											"type": "text"
+										},
+										{
+											"key": "price",
+											"value": "1113",
+											"type": "text"
+										},
+										{
+											"key": "repeatable",
+											"value": "0",
+											"type": "text"
+										},
+										{
+											"key": "expire_at",
+											"value": "{{prolongDays}}",
+											"type": "text"
+										},
+										{
+											"key": "complete_url",
+											"value": "{{loyaltyTestLanding}}",
+											"type": "text"
+										},
+										{
+											"key": "partner_id",
+											"value": "{{loyaltyLandingPartnerId}}",
+											"type": "text"
+										},
+										{
+											"key": "category_id",
+											"value": "{{taskCategoryId}}",
+											"type": "text"
+										},
+										{
+											"key": "view_type",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "status_code",
+											"value": "2",
+											"type": "text"
+										},
+										{
+											"key": "logo_photo_id",
+											"value": "{{icon.book}}",
+											"type": "text"
+										},
+										{
+											"key": "cover_photo_id",
+											"value": "{{cover.book}}",
+											"type": "text"
+										},
+										{
+											"key": "instruction_header",
+											"value": "Как выполнить",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://api.vk.com/method/loyaltyTeen.adminCreateTask?access_token={{loyalty_token}}",
+									"protocol": "https",
+									"host": [
+										"api",
+										"vk",
+										"com"
+									],
+									"path": [
+										"method",
+										"loyaltyTeen.adminCreateTask"
+									],
+									"query": [
+										{
+											"key": "access_token",
+											"value": "{{loyalty_token}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delay.noCompleteUrl.repeat.nodate",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Отложено, нет ссылки на выполнение",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "{{desc.short}}",
+											"type": "text"
+										},
+										{
+											"key": "instruction_text",
+											"value": "- заглушка вместо Скоро кнопка начать",
+											"type": "text"
+										},
+										{
+											"key": "price",
+											"value": "202",
+											"type": "text"
+										},
+										{
+											"key": "repeatable",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "expire_at",
+											"value": "{{prolongDays}}",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "complete_url",
+											"value": "{{loyaltyTestLanding}}",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "partner_id",
+											"value": "{{loyaltyLandingPartnerId}}",
+											"type": "text"
+										},
+										{
+											"key": "category_id",
+											"value": "{{taskCategoryId}}",
+											"type": "text"
+										},
+										{
+											"key": "view_type",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "status_code",
+											"value": "2",
+											"type": "text"
+										},
+										{
+											"key": "logo_photo_id",
+											"value": "{{icon.book}}",
+											"type": "text"
+										},
+										{
+											"key": "cover_photo_id",
+											"value": "{{cover.book}}",
+											"type": "text"
+										},
+										{
+											"key": "instruction_header",
+											"value": "Как выполнить",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://api.vk.com/method/loyaltyTeen.adminCreateTask?access_token={{loyalty_token}}",
+									"protocol": "https",
+									"host": [
+										"api",
+										"vk",
+										"com"
+									],
+									"path": [
+										"method",
+										"loyaltyTeen.adminCreateTask"
+									],
+									"query": [
+										{
+											"key": "access_token",
+											"value": "{{loyalty_token}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delay.noCompleteUrl.nonrepeat.nextYear",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"let daysCount = eval(globals.prolongDate)(365);",
+											"pm.environment.set('prolongDays', daysCount)"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Отложено, нет ссылки на выполнение",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "{{desc.short}}",
+											"type": "text"
+										},
+										{
+											"key": "instruction_text",
+											"value": "- заглушка вместо Скоро кнопка начать",
+											"type": "text"
+										},
+										{
+											"key": "price",
+											"value": "10",
+											"type": "text"
+										},
+										{
+											"key": "repeatable",
+											"value": "0",
+											"type": "text"
+										},
+										{
+											"key": "expire_at",
+											"value": "{{prolongDays}}",
+											"type": "text"
+										},
+										{
+											"key": "complete_url",
+											"value": "{{loyaltyTestLanding}}",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "partner_id",
+											"value": "{{loyaltyLandingPartnerId}}",
+											"type": "text"
+										},
+										{
+											"key": "category_id",
+											"value": "{{taskCategoryId}}",
+											"type": "text"
+										},
+										{
+											"key": "view_type",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "status_code",
+											"value": "2",
+											"type": "text"
+										},
+										{
+											"key": "logo_photo_id",
+											"value": "{{icon.book}}",
+											"type": "text"
+										},
+										{
+											"key": "cover_photo_id",
+											"value": "{{cover.book}}",
+											"type": "text"
+										},
+										{
+											"key": "instruction_header",
+											"value": "Как выполнить",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://api.vk.com/method/loyaltyTeen.adminCreateTask?access_token={{loyalty_token}}",
+									"protocol": "https",
+									"host": [
+										"api",
+										"vk",
+										"com"
+									],
+									"path": [
+										"method",
+										"loyaltyTeen.adminCreateTask"
+									],
+									"query": [
+										{
+											"key": "access_token",
+											"value": "{{loyalty_token}}"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Other",
+					"item": [
+						{
+							"name": "expired.repeatable",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"let daysCount = eval(globals.prolongDate)(-15);",
+											"pm.environment.set('prolongDays', daysCount)"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Повторяемое, истекло",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "{{desc.long}}",
+											"type": "text"
+										},
+										{
+											"key": "instruction_text",
+											"value": "- не отображается в категориях\n- доступно по прямой ссылке",
+											"type": "text"
+										},
+										{
+											"key": "price",
+											"value": "5",
+											"type": "text"
+										},
+										{
+											"key": "repeatable",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "expire_at",
+											"value": "{{prolongDays}}",
+											"type": "text"
+										},
+										{
+											"key": "complete_url",
+											"value": "{{loyaltyTestLanding}}",
+											"type": "text"
+										},
+										{
+											"key": "partner_id",
+											"value": "{{loyaltyLandingPartnerId}}",
+											"type": "text"
+										},
+										{
+											"key": "category_id",
+											"value": "{{taskCategoryId}}",
+											"type": "text"
+										},
+										{
+											"key": "view_type",
+											"value": "0",
+											"type": "text"
+										},
+										{
+											"key": "status_code",
+											"value": "2",
+											"type": "text"
+										},
+										{
+											"key": "logo_photo_id",
+											"value": "{{icon.school}}",
+											"type": "text"
+										},
+										{
+											"key": "cover_photo_id",
+											"value": "{{cover.school}}",
+											"type": "text"
+										},
+										{
+											"key": "instruction_header",
+											"value": "Как выполнить",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://api.vk.com/method/loyaltyTeen.adminCreateTask?access_token={{loyalty_token}}",
+									"protocol": "https",
+									"host": [
+										"api",
+										"vk",
+										"com"
+									],
+									"path": [
+										"method",
+										"loyaltyTeen.adminCreateTask"
+									],
+									"query": [
+										{
+											"key": "access_token",
+											"value": "{{loyalty_token}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "expired.nonrepeatable",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"let daysCount = eval(globals.prolongDate)(-15);",
+											"pm.environment.set('prolongDays', daysCount)"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Одноразовое, истекло",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "{{desc.long}}",
+											"type": "text"
+										},
+										{
+											"key": "instruction_text",
+											"value": "- не отображается в категориях\n- доступно по прямой ссылке",
+											"type": "text"
+										},
+										{
+											"key": "price",
+											"value": "55",
+											"type": "text"
+										},
+										{
+											"key": "repeatable",
+											"value": "0",
+											"type": "text"
+										},
+										{
+											"key": "expire_at",
+											"value": "{{prolongDays}}",
+											"type": "text"
+										},
+										{
+											"key": "complete_url",
+											"value": "{{loyaltyTestLanding}}",
+											"type": "text"
+										},
+										{
+											"key": "partner_id",
+											"value": "{{loyaltyLandingPartnerId}}",
+											"type": "text"
+										},
+										{
+											"key": "category_id",
+											"value": "{{taskCategoryId}}",
+											"type": "text"
+										},
+										{
+											"key": "view_type",
+											"value": "0",
+											"type": "text"
+										},
+										{
+											"key": "status_code",
+											"value": "2",
+											"type": "text"
+										},
+										{
+											"key": "logo_photo_id",
+											"value": "{{icon.sports}}",
+											"type": "text"
+										},
+										{
+											"key": "cover_photo_id",
+											"value": "{{cover.sports}}",
+											"type": "text"
+										},
+										{
+											"key": "instruction_header",
+											"value": "Как выполнить",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://api.vk.com/method/loyaltyTeen.adminCreateTask?access_token={{loyalty_token}}",
+									"protocol": "https",
+									"host": [
+										"api",
+										"vk",
+										"com"
+									],
+									"path": [
+										"method",
+										"loyaltyTeen.adminCreateTask"
+									],
+									"query": [
+										{
+											"key": "access_token",
+											"value": "{{loyalty_token}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "hidden.repeatable",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"let daysCount = eval(globals.prolongDate)('random');",
+											"pm.environment.set('prolongDays', daysCount)"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Задание скрыто",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "{{desc.long}}",
+											"type": "text"
+										},
+										{
+											"key": "instruction_text",
+											"value": "- не отображается в категориях\n- недоступно по прямой ссылке",
+											"type": "text"
+										},
+										{
+											"key": "price",
+											"value": "55",
+											"type": "text"
+										},
+										{
+											"key": "repeatable",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "expire_at",
+											"value": "{{prolongDays}}",
+											"type": "text"
+										},
+										{
+											"key": "complete_url",
+											"value": "{{loyaltyTestLanding}}",
+											"type": "text"
+										},
+										{
+											"key": "partner_id",
+											"value": "{{loyaltyLandingPartnerId}}",
+											"type": "text"
+										},
+										{
+											"key": "category_id",
+											"value": "{{taskCategoryId}}",
+											"type": "text"
+										},
+										{
+											"key": "view_type",
+											"value": "0",
+											"type": "text"
+										},
+										{
+											"key": "status_code",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "logo_photo_id",
+											"value": "{{icon.sports}}",
+											"type": "text"
+										},
+										{
+											"key": "cover_photo_id",
+											"value": "{{cover.sports}}",
+											"type": "text"
+										},
+										{
+											"key": "instruction_header",
+											"value": "Как выполнить",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://api.vk.com/method/loyaltyTeen.adminCreateTask?access_token={{loyalty_token}}",
+									"protocol": "https",
+									"host": [
+										"api",
+										"vk",
+										"com"
+									],
+									"path": [
+										"method",
+										"loyaltyTeen.adminCreateTask"
+									],
+									"query": [
+										{
+											"key": "access_token",
+											"value": "{{loyalty_token}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "nonexecutable",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"let daysCount = eval(globals.prolongDate)('random');",
+											"pm.environment.set('prolongDays', daysCount)"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Не засчитываемое задание",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "{{desc.short}}",
+											"type": "text"
+										},
+										{
+											"key": "instruction_text",
+											"value": "- задание от другого партнера\n- не должно засичтывать выполнение",
+											"type": "text"
+										},
+										{
+											"key": "price",
+											"value": "55",
+											"type": "text"
+										},
+										{
+											"key": "repeatable",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "expire_at",
+											"value": "{{prolongDays}}",
+											"type": "text"
+										},
+										{
+											"key": "complete_url",
+											"value": "https://charity.dev1.hsstore.ru/d/?task=1",
+											"type": "text"
+										},
+										{
+											"key": "partner_id",
+											"value": "{{loyaltyLandingPartnerId}}",
+											"type": "text"
+										},
+										{
+											"key": "category_id",
+											"value": "{{taskCategoryId}}",
+											"type": "text"
+										},
+										{
+											"key": "view_type",
+											"value": "0",
+											"type": "text"
+										},
+										{
+											"key": "status_code",
+											"value": "2",
+											"type": "text"
+										},
+										{
+											"key": "logo_photo_id",
+											"value": "{{icon.sports}}",
+											"type": "text"
+										},
+										{
+											"key": "cover_photo_id",
+											"value": "{{cover.sports}}",
+											"type": "text"
+										},
+										{
+											"key": "instruction_header",
+											"value": "Как выполнить",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://api.vk.com/method/loyaltyTeen.adminCreateTask?access_token={{loyalty_token}}",
+									"protocol": "https",
+									"host": [
+										"api",
+										"vk",
+										"com"
+									],
+									"path": [
+										"method",
+										"loyaltyTeen.adminCreateTask"
+									],
+									"query": [
+										{
+											"key": "access_token",
+											"value": "{{loyalty_token}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "nocategory",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"let daysCount = eval(globals.prolongDate)('random');",
+											"pm.environment.set('prolongDays', daysCount)"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Задание без категори",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "{{desc.short}}",
+											"type": "text"
+										},
+										{
+											"key": "instruction_text",
+											"value": "- не отображается в списках на клиенте\n- доступно по прямой ссылке",
+											"type": "text"
+										},
+										{
+											"key": "price",
+											"value": "55",
+											"type": "text"
+										},
+										{
+											"key": "repeatable",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "expire_at",
+											"value": "{{prolongDays}}",
+											"type": "text"
+										},
+										{
+											"key": "complete_url",
+											"value": "{{loyaltyTestLanding}}",
+											"type": "text"
+										},
+										{
+											"key": "partner_id",
+											"value": "{{loyaltyLandingPartnerId}}",
+											"type": "text"
+										},
+										{
+											"key": "category_id",
+											"value": "{{taskCategoryId}}",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "view_type",
+											"value": "0",
+											"type": "text"
+										},
+										{
+											"key": "status_code",
+											"value": "2",
+											"type": "text"
+										},
+										{
+											"key": "logo_photo_id",
+											"value": "{{icon.cash}}",
+											"type": "text"
+										},
+										{
+											"key": "cover_photo_id",
+											"value": "{{cover.cash}}",
+											"type": "text"
+										},
+										{
+											"key": "instruction_header",
+											"value": "Как выполнить",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://api.vk.com/method/loyaltyTeen.adminCreateTask?access_token={{loyalty_token}}",
+									"protocol": "https",
+									"host": [
+										"api",
+										"vk",
+										"com"
+									],
+									"path": [
+										"method",
+										"loyaltyTeen.adminCreateTask"
+									],
+									"query": [
+										{
+											"key": "access_token",
+											"value": "{{loyalty_token}}"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"let responseJson = pm.response.json()",
+							"let id = responseJson.response.id",
+							"",
+							"console.warn(`https://vk.com/app7785093#task/${id}`)"
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Offer",
+			"item": [
+				{
+					"name": "validOffers",
+					"item": [
+						{
+							"name": "nondelay.nodate.no_content",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Карточка почти без контента",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "instruction_text",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "price",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "expire_at",
+											"value": "{{prolongDays}}",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "coupon_id",
+											"value": "{{coupon_id}}",
+											"type": "text"
+										},
+										{
+											"key": "partner_id",
+											"value": "{{loyaltyLandingPartnerId}}",
+											"type": "text"
+										},
+										{
+											"key": "category_id",
+											"value": "{{offerCategoryId}}",
+											"type": "text"
+										},
+										{
+											"key": "view_type",
+											"value": "0",
+											"type": "text"
+										},
+										{
+											"key": "status_code",
+											"value": "2",
+											"type": "text"
+										},
+										{
+											"key": "logo_photo_id",
+											"value": "{{icon.sports}}",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "cover_photo_id",
+											"value": "{{cover.sports}}",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "instruction_header",
+											"value": "Как получить",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://api.vk.com/method/loyaltyTeen.adminCreateOffer?access_token={{loyalty_token}}",
+									"protocol": "https",
+									"host": [
+										"api",
+										"vk",
+										"com"
+									],
+									"path": [
+										"method",
+										"loyaltyTeen.adminCreateOffer"
+									],
+									"query": [
+										{
+											"key": "access_token",
+											"value": "{{loyalty_token}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "nondelay.nextyear.max_content",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"let daysCount = eval(globals.prolongDate)(365);",
+											"pm.environment.set('prolongDays', daysCount)"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "{{title.long}}",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "{{desc.long}}",
+											"type": "text"
+										},
+										{
+											"key": "instruction_text",
+											"value": "{{instr.long}}",
+											"type": "text"
+										},
+										{
+											"key": "price",
+											"value": "999999999",
+											"type": "text"
+										},
+										{
+											"key": "expire_at",
+											"value": "{{prolongDays}}",
+											"type": "text"
+										},
+										{
+											"key": "coupon_id",
+											"value": "{{coupon_id}}",
+											"type": "text"
+										},
+										{
+											"key": "partner_id",
+											"value": "{{loyaltyLandingPartnerId}}",
+											"type": "text"
+										},
+										{
+											"key": "category_id",
+											"value": "{{offerCategoryId}}",
+											"type": "text"
+										},
+										{
+											"key": "view_type",
+											"value": "0",
+											"type": "text"
+										},
+										{
+											"key": "status_code",
+											"value": "2",
+											"type": "text"
+										},
+										{
+											"key": "logo_photo_id",
+											"value": "{{icon.sports}}",
+											"type": "text"
+										},
+										{
+											"key": "cover_photo_id",
+											"value": "{{cover.sports}}",
+											"type": "text"
+										},
+										{
+											"key": "instruction_header",
+											"value": "Как получить",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://api.vk.com/method/loyaltyTeen.adminCreateOffer?access_token={{loyalty_token}}",
+									"protocol": "https",
+									"host": [
+										"api",
+										"vk",
+										"com"
+									],
+									"path": [
+										"method",
+										"loyaltyTeen.adminCreateOffer"
+									],
+									"query": [
+										{
+											"key": "access_token",
+											"value": "{{loyalty_token}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "nondelay.futureDate.validCoupon",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"let daysCount = eval(globals.prolongDate)('random');",
+											"pm.environment.set('prolongDays', daysCount)"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Кейс: успешная покупка (купон {{coupon_format}})",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "{{desc.long}}",
+											"type": "text"
+										},
+										{
+											"key": "instruction_text",
+											"value": "- успешная покупка\n- конфетти при успехе\n- точка входа в Купоны",
+											"contentType": "",
+											"type": "text"
+										},
+										{
+											"key": "price",
+											"value": "100",
+											"type": "text"
+										},
+										{
+											"key": "expire_at",
+											"value": "{{prolongDays}}",
+											"type": "text"
+										},
+										{
+											"key": "coupon_id",
+											"value": "{{coupon_id}}",
+											"type": "text"
+										},
+										{
+											"key": "partner_id",
+											"value": "{{loyaltyLandingPartnerId}}",
+											"type": "text"
+										},
+										{
+											"key": "category_id",
+											"value": "{{offerCategoryId}}",
+											"type": "text"
+										},
+										{
+											"key": "view_type",
+											"value": "0",
+											"type": "text"
+										},
+										{
+											"key": "status_code",
+											"value": "2",
+											"type": "text"
+										},
+										{
+											"key": "logo_photo_id",
+											"value": "{{icon.cash}}",
+											"type": "text"
+										},
+										{
+											"key": "cover_photo_id",
+											"value": "{{cover.cash}}",
+											"type": "text"
+										},
+										{
+											"key": "instruction_header",
+											"value": "Как получить",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://api.vk.com/method/loyaltyTeen.adminCreateOffer?access_token={{loyalty_token}}",
+									"protocol": "https",
+									"host": [
+										"api",
+										"vk",
+										"com"
+									],
+									"path": [
+										"method",
+										"loyaltyTeen.adminCreateOffer"
+									],
+									"query": [
+										{
+											"key": "access_token",
+											"value": "{{loyalty_token}}"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "invalidOffers",
+					"item": [
+						{
+							"name": "nondelay.couponDeleted",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"let daysCount = eval(globals.prolongDate)('random');",
+											"pm.environment.set('prolongDays', daysCount)"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Кейс: купон удален",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "{{desc.long}}",
+											"type": "text"
+										},
+										{
+											"key": "instruction_text",
+											"value": "{{instr.long}}",
+											"type": "text"
+										},
+										{
+											"key": "price",
+											"value": "100",
+											"type": "text"
+										},
+										{
+											"key": "expire_at",
+											"value": "{{prolongDays}}",
+											"type": "text"
+										},
+										{
+											"key": "coupon_id",
+											"value": "-203312167_1",
+											"type": "text"
+										},
+										{
+											"key": "partner_id",
+											"value": "{{loyaltyLongPartner(id)}}",
+											"type": "text"
+										},
+										{
+											"key": "category_id",
+											"value": "{{offerCategoryId}}",
+											"type": "text"
+										},
+										{
+											"key": "view_type",
+											"value": "0",
+											"type": "text"
+										},
+										{
+											"key": "status_code",
+											"value": "2",
+											"type": "text"
+										},
+										{
+											"key": "logo_photo_id",
+											"value": "{{icon.cash}}",
+											"type": "text"
+										},
+										{
+											"key": "cover_photo_id",
+											"value": "{{cover.cash}}",
+											"type": "text"
+										},
+										{
+											"key": "instruction_header",
+											"value": "Как выполнить",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://api.vk.com/method/loyaltyTeen.adminCreateOffer?access_token={{loyalty_token}}",
+									"protocol": "https",
+									"host": [
+										"api",
+										"vk",
+										"com"
+									],
+									"path": [
+										"method",
+										"loyaltyTeen.adminCreateOffer"
+									],
+									"query": [
+										{
+											"key": "access_token",
+											"value": "{{loyalty_token}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "nondelay.futureDate.invalidCoupon",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"let daysCount = eval(globals.prolongDate)('random');",
+											"pm.environment.set('prolongDays', daysCount)"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Кейс: ошибка при покупке",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "{{coupon_state}}",
+											"type": "text"
+										},
+										{
+											"key": "instruction_text",
+											"value": "{{instr.long}}",
+											"type": "text"
+										},
+										{
+											"key": "price",
+											"value": "100",
+											"type": "text"
+										},
+										{
+											"key": "expire_at",
+											"value": "{{prolongDays}}",
+											"type": "text"
+										},
+										{
+											"key": "coupon_id",
+											"value": "{{coupon_id}}",
+											"type": "text"
+										},
+										{
+											"key": "partner_id",
+											"value": "{{loyaltyLandingPartnerId}}",
+											"type": "text"
+										},
+										{
+											"key": "category_id",
+											"value": "{{offerCategoryId}}",
+											"type": "text"
+										},
+										{
+											"key": "view_type",
+											"value": "0",
+											"type": "text"
+										},
+										{
+											"key": "status_code",
+											"value": "2",
+											"type": "text"
+										},
+										{
+											"key": "logo_photo_id",
+											"value": "{{icon.cash}}",
+											"type": "text"
+										},
+										{
+											"key": "cover_photo_id",
+											"value": "{{cover.cash}}",
+											"type": "text"
+										},
+										{
+											"key": "instruction_header",
+											"value": "Как получить",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://api.vk.com/method/loyaltyTeen.adminCreateOffer?access_token={{loyalty_token}}",
+									"protocol": "https",
+									"host": [
+										"api",
+										"vk",
+										"com"
+									],
+									"path": [
+										"method",
+										"loyaltyTeen.adminCreateOffer"
+									],
+									"query": [
+										{
+											"key": "access_token",
+											"value": "{{loyalty_token}}"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "delayedOffers",
+					"item": [
+						{
+							"name": "delay.futureDate.validCoupon",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"let daysCount = eval(globals.prolongDate)('random');",
+											"pm.environment.set('prolongDays', daysCount)"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Отложено, со ссылкой на купон",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "- заглушка Скоро вместо кнпоки\n- ссылка на купон не пробивает настройку Отложен",
+											"type": "text"
+										},
+										{
+											"key": "instruction_text",
+											"value": "{{instr.long}}",
+											"type": "text"
+										},
+										{
+											"key": "price",
+											"value": "100",
+											"type": "text"
+										},
+										{
+											"key": "expire_at",
+											"value": "{{prolongDays}}",
+											"type": "text"
+										},
+										{
+											"key": "coupon_id",
+											"value": "{{coupon_id}}",
+											"type": "text"
+										},
+										{
+											"key": "partner_id",
+											"value": "{{loyaltyLandingPartnerId}}",
+											"type": "text"
+										},
+										{
+											"key": "category_id",
+											"value": "{{offerCategoryId}}",
+											"type": "text"
+										},
+										{
+											"key": "view_type",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "status_code",
+											"value": "2",
+											"type": "text"
+										},
+										{
+											"key": "logo_photo_id",
+											"value": "{{icon.school}}",
+											"type": "text"
+										},
+										{
+											"key": "cover_photo_id",
+											"value": "{{cover.school}}",
+											"type": "text"
+										},
+										{
+											"key": "instruction_header",
+											"value": "Как получить",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://api.vk.com/method/loyaltyTeen.adminCreateOffer?access_token={{loyalty_token}}",
+									"protocol": "https",
+									"host": [
+										"api",
+										"vk",
+										"com"
+									],
+									"path": [
+										"method",
+										"loyaltyTeen.adminCreateOffer"
+									],
+									"query": [
+										{
+											"key": "access_token",
+											"value": "{{loyalty_token}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delay.nodate.validCoupon",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Отложено, со ссылкой на купон",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "- заглушка Скоро вместо кнпоки\n- ссылка на купон не пробивает настройку Отложен\n- дата не задана",
+											"type": "text"
+										},
+										{
+											"key": "instruction_text",
+											"value": "{{instr.long}}",
+											"type": "text"
+										},
+										{
+											"key": "price",
+											"value": "100",
+											"type": "text"
+										},
+										{
+											"key": "expire_at",
+											"value": "{{prolongDays}}",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "coupon_id",
+											"value": "{{coupon_id}}",
+											"type": "text"
+										},
+										{
+											"key": "partner_id",
+											"value": "{{loyaltyLandingPartnerId}}",
+											"type": "text"
+										},
+										{
+											"key": "category_id",
+											"value": "{{offerCategoryId}}",
+											"type": "text"
+										},
+										{
+											"key": "view_type",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "status_code",
+											"value": "2",
+											"type": "text"
+										},
+										{
+											"key": "logo_photo_id",
+											"value": "{{icon.school}}",
+											"type": "text"
+										},
+										{
+											"key": "cover_photo_id",
+											"value": "{{cover.school}}",
+											"type": "text"
+										},
+										{
+											"key": "instruction_header",
+											"value": "Как получить",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://api.vk.com/method/loyaltyTeen.adminCreateOffer?access_token={{loyalty_token}}",
+									"protocol": "https",
+									"host": [
+										"api",
+										"vk",
+										"com"
+									],
+									"path": [
+										"method",
+										"loyaltyTeen.adminCreateOffer"
+									],
+									"query": [
+										{
+											"key": "access_token",
+											"value": "{{loyalty_token}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delay.futureDate.noCoupon",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"let daysCount = eval(globals.prolongDate)('random');",
+											"pm.environment.set('prolongDays', daysCount)"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Отложено, нет ссылки на купон",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "- заглушка Скоро вместо кнпоки\n- дата истечения не отображается",
+											"type": "text"
+										},
+										{
+											"key": "instruction_text",
+											"value": "{{instr.long}}",
+											"type": "text"
+										},
+										{
+											"key": "price",
+											"value": "100",
+											"type": "text"
+										},
+										{
+											"key": "expire_at",
+											"value": "{{prolongDays}}",
+											"type": "text"
+										},
+										{
+											"key": "coupon_id",
+											"value": "{{coupon_id}}",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "partner_id",
+											"value": "{{loyaltyLandingPartnerId}}",
+											"type": "text"
+										},
+										{
+											"key": "category_id",
+											"value": "{{offerCategoryId}}",
+											"type": "text"
+										},
+										{
+											"key": "view_type",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "status_code",
+											"value": "2",
+											"type": "text"
+										},
+										{
+											"key": "logo_photo_id",
+											"value": "{{icon.school}}",
+											"type": "text"
+										},
+										{
+											"key": "cover_photo_id",
+											"value": "{{cover.school}}",
+											"type": "text"
+										},
+										{
+											"key": "instruction_header",
+											"value": "Как получить",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://api.vk.com/method/loyaltyTeen.adminCreateOffer?access_token={{loyalty_token}}",
+									"protocol": "https",
+									"host": [
+										"api",
+										"vk",
+										"com"
+									],
+									"path": [
+										"method",
+										"loyaltyTeen.adminCreateOffer"
+									],
+									"query": [
+										{
+											"key": "access_token",
+											"value": "{{loyalty_token}}"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Other",
+					"item": [
+						{
+							"name": "nondelay.hidden",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Предложение скрыто",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "instruction_text",
+											"value": "- не отбражается в каталоге\n- недоступно по прямой ссылке",
+											"type": "text"
+										},
+										{
+											"key": "price",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "expire_at",
+											"value": "{{prolongDays}}",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "coupon_id",
+											"value": "{{coupon_id}}",
+											"type": "text"
+										},
+										{
+											"key": "partner_id",
+											"value": "{{loyaltyLandingPartnerId}}",
+											"type": "text"
+										},
+										{
+											"key": "category_id",
+											"value": "{{offerCategoryId}}",
+											"type": "text"
+										},
+										{
+											"key": "view_type",
+											"value": "0",
+											"type": "text"
+										},
+										{
+											"key": "status_code",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "logo_photo_id",
+											"value": "{{icon.sports}}",
+											"type": "text"
+										},
+										{
+											"key": "cover_photo_id",
+											"value": "{{cover.sports}}",
+											"type": "text"
+										},
+										{
+											"key": "instruction_header",
+											"value": "Как получить",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://api.vk.com/method/loyaltyTeen.adminCreateOffer?access_token={{loyalty_token}}",
+									"protocol": "https",
+									"host": [
+										"api",
+										"vk",
+										"com"
+									],
+									"path": [
+										"method",
+										"loyaltyTeen.adminCreateOffer"
+									],
+									"query": [
+										{
+											"key": "access_token",
+											"value": "{{loyalty_token}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "nondelay.expired",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"let daysCount = eval(globals.prolongDate)(-15);",
+											"pm.environment.set('prolongDays', daysCount)"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Предложение истекло",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "instruction_text",
+											"value": "- не отображается в каталоге\n- недоступно по прямой ссылке",
+											"type": "text"
+										},
+										{
+											"key": "price",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "expire_at",
+											"value": "{{prolongDays}}",
+											"type": "text"
+										},
+										{
+											"key": "coupon_id",
+											"value": "{{coupon_id}}",
+											"type": "text"
+										},
+										{
+											"key": "partner_id",
+											"value": "{{loyaltyLandingPartnerId}}",
+											"type": "text"
+										},
+										{
+											"key": "category_id",
+											"value": "{{offerCategoryId}}",
+											"type": "text"
+										},
+										{
+											"key": "view_type",
+											"value": "0",
+											"type": "text"
+										},
+										{
+											"key": "status_code",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "logo_photo_id",
+											"value": "{{icon.sports}}",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "cover_photo_id",
+											"value": "{{cover.sports}}",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "instruction_header",
+											"value": "Как получить",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://api.vk.com/method/loyaltyTeen.adminCreateOffer?access_token={{loyalty_token}}",
+									"protocol": "https",
+									"host": [
+										"api",
+										"vk",
+										"com"
+									],
+									"path": [
+										"method",
+										"loyaltyTeen.adminCreateOffer"
+									],
+									"query": [
+										{
+											"key": "access_token",
+											"value": "{{loyalty_token}}"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"let responseJson = pm.response.json()",
+							"let id = responseJson.response.id",
+							"",
+							"console.warn(`https://vk.com/app7785093#offer/${id}`)"
+						]
+					}
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"const request_url   = pm.request.url;",
+					"const request_query = request_url.query;",
+					"",
+					"setApiVersion();",
+					"",
+					"function setApiVersion(default_api_version = '5.141') {",
+					"    const global_api_version = pm.globals.get('api_version');",
+					"    const env_api_version    = pm.environment.get('api_version');",
+					"    const var_api_version    = pm.variables.get('api_version');",
+					"",
+					"    const v = global_api_version || env_api_version || var_api_version || default_api_version;",
+					"    const noVersion = !request_query.filter((q) => q.key === 'v' && q.disabled !== true).length;",
+					"",
+					"    noVersion && request_url.addQueryParams([`v=${ v }`]);",
+					"}"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "completeUrl",
+			"value": ""
+		},
+		{
+			"key": "loyaltyTestLanding",
+			"value": ""
+		},
+		{
+			"key": "loyaltyLandingPartnerId",
+			"value": ""
+		},
+		{
+			"key": "taskCategoryId.longText",
+			"value": ""
+		},
+		{
+			"key": "taskCategoryId",
+			"value": ""
+		},
+		{
+			"key": "cover.book",
+			"value": ""
+		},
+		{
+			"key": "cover.zoom",
+			"value": ""
+		},
+		{
+			"key": "cover.school",
+			"value": ""
+		},
+		{
+			"key": "cover.cash",
+			"value": ""
+		},
+		{
+			"key": "cover.sports",
+			"value": ""
+		},
+		{
+			"key": "icon.book",
+			"value": ""
+		},
+		{
+			"key": "icon.zoom",
+			"value": ""
+		},
+		{
+			"key": "icon.school",
+			"value": ""
+		},
+		{
+			"key": "icon.cash",
+			"value": ""
+		},
+		{
+			"key": "icon.sports",
+			"value": ""
+		},
+		{
+			"key": "loyaltyLongPartner(id)",
+			"value": ""
+		},
+		{
+			"key": "title.long",
+			"value": ""
+		},
+		{
+			"key": "title.short",
+			"value": ""
+		},
+		{
+			"key": "desc.long",
+			"value": ""
+		},
+		{
+			"key": "desc.short",
+			"value": ""
+		},
+		{
+			"key": "instr.long",
+			"value": ""
+		},
+		{
+			"key": "instr.short",
+			"value": ""
+		},
+		{
+			"key": "offerCategoryId",
+			"value": ""
+		}
+	]
+}
